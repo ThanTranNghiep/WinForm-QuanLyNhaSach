@@ -63,6 +63,26 @@ namespace QuanLyNhaSach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eyeHide {
+            get {
+                object obj = ResourceManager.GetObject("eyeHide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eyeShow {
+            get {
+                object obj = ResourceManager.GetObject("eyeShow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NS_TN2 {
             get {
                 object obj = ResourceManager.GetObject("NS TN2", resourceCulture);
