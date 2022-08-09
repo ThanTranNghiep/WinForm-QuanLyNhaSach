@@ -14,46 +14,21 @@ namespace QuanLyNhaSach.UI
             InitializeComponent();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection connection = new SqlConnection(DataConnectionString.ConnectionString))
-            {
-                try
-                {
-                    if (connection.State == ConnectionState.Closed)
-                    {
-                        connection.Open();
-
-                    }
-                    String sqlQuery = @"select * from Sach where Sach.MaSach like 'SachG%'";
-                    this.qLNhaSachDataSet.Sach.Clear();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlQuery, connection);
-                    sqlDataAdapter.Fill(this.qLNhaSachDataSet.Sach);
-                    dataGridViewFind.DataSource = this.qLNhaSachDataSet.Sach;
-                    dataGridViewFind.Refresh();
-                    connection.Close();
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-        }
-
 
         private void FrmBanHang_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLNhaSachDataSet.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.qLNhaSachDataSet.NhanVien);
             // TODO: This line of code loads data into the 'qLNhaSachDataSet.Sach' table. You can move, or remove it, as needed.
             this.sachTableAdapter.Fill(this.qLNhaSachDataSet.Sach);
             // random Ma Hoa Don Ban Hang 
             Random random = new Random();
             String MaHDB = "HDB" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + random.Next(100, 999).ToString();
             txtMaHDB.Text = MaHDB;
-            txtMaNV.Text = FrmLogin.MaNV;
+            cmbNhanVien.Text = FrmLogin.MaNV;
             dateTimeONgayBan.DateTimeOffset = DateTime.Now;
+            txtMaSach.Text = "";
+            btnXoaTatCa_Click(sender, e);
             int sum = 0;
             for (int i = 0; i < lvHoaDonBanSach.Items.Count; i++)
             {
@@ -62,7 +37,6 @@ namespace QuanLyNhaSach.UI
             }
             txtTongTien.Text = sum + " VNĐ";
         }
-
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             if (txtMaSach.Text.Trim() != "")
@@ -132,26 +106,18 @@ namespace QuanLyNhaSach.UI
 
                     }
                     String sqlQuery = @"select * from Sach";
-                    //if (txtFind.Text != null)
-                    //    sqlQuery = @"select * from Sach ";
-
                     this.qLNhaSachDataSet.Sach.Clear();
                     SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlQuery, connection);
                     sqlDataAdapter.Fill(this.qLNhaSachDataSet.Sach);
                     dataGridViewFind.DataSource = this.qLNhaSachDataSet.Sach;
                     dataGridViewFind.Refresh();
                     connection.Close();
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
-
-
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -230,6 +196,7 @@ namespace QuanLyNhaSach.UI
             {
                 SaveHoaDon();
                 saveCTHoaDonBan();
+                FrmBanHang_Load(sender,e);
             }
             else
                 MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn bán", "Thông Báo", MessageBoxButtons.OK);
@@ -247,7 +214,7 @@ namespace QuanLyNhaSach.UI
                     }
                     String NgayBan = dateTimeONgayBan.DateTimeOffset.Year.ToString() + "-" + dateTimeONgayBan.DateTimeOffset.Month.ToString() + "-" + dateTimeONgayBan.DateTimeOffset.Day.ToString();
                     String insertQuerySql = "insert into HoaDonBan (MaHDB,MaNV,NgayBan) values('" +
-                                                txtMaHDB.Text.Trim() + "','" + txtMaNV.Text + "','" + NgayBan + "')";
+                                                txtMaHDB.Text.Trim() + "','" + cmbNhanVien.SelectedValue + "','" + NgayBan + "')";
                     SqlCommand cmd = new SqlCommand(insertQuerySql, connection);
                     int rowInsert = cmd.ExecuteNonQuery();
                     if (rowInsert > 0)
@@ -315,29 +282,43 @@ namespace QuanLyNhaSach.UI
             }
         }
         private void SetSoLuongSach(object sender, EventArgs e) //  Trả về số lượng sách còn lại 
-        {                                                       //  không cho bán nhìu  hơn số lượng tồn
-            using (SqlConnection connection = new SqlConnection(DataConnectionString.ConnectionString))
+        {   
+            if (txtMaSach.Text.Trim().CompareTo("") != 0)    //  không cho bán nhìu  hơn số lượng tồn
             {
-                try
+                using (SqlConnection connection = new SqlConnection(DataConnectionString.ConnectionString))
                 {
-                    if (connection.State == ConnectionState.Closed)
+                    try
                     {
-                        connection.Open();
-                    }
+                        if (connection.State == ConnectionState.Closed)
+                        {
+                            connection.Open();
+                        }
 
-                    String insertQuerySql = "select dbo.SoLuongCuaSach ('" + txtMaSach.Text.Trim() + "')";
-                    SqlCommand cmd = new SqlCommand(insertQuerySql, connection);
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sqlDataAdapter.Fill(dt);
-                    numericUpDownSoLuong.Maximum = int.Parse(dt.Rows[0][0].ToString());
-                    connection.Close();
+                        String insertQuerySql = "select dbo.SoLuongCuaSach ('" + txtMaSach.Text.Trim() + "')"; // funstion  trả ra số lượng sách
+                        SqlCommand cmd = new SqlCommand(insertQuerySql, connection);
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        sqlDataAdapter.Fill(dt);
+                        numericUpDownSoLuong.Maximum = int.Parse(dt.Rows[0][0].ToString());
+                        if (int.Parse(dt.Rows[0][0].ToString()) == 0)
+                        {
+                            MessageBox.Show("    Sách này đã hết\nVui lòng chọn sách khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            txtMaSach.Text = "";
+                            btnThemSach.Enabled = false;
+                        }
+                        else
+                        {
+                            btnThemSach.Enabled = true;
+                        }
+
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            }    
         }
 
         private void TongTien()
@@ -363,7 +344,7 @@ namespace QuanLyNhaSach.UI
                         {
                             connection.Open();
                         }
-                    
+
                         String sqlQuery = @"SELECT * FROM Sach WHERE MaSach LIKE '%" + txtFind.Text + "%'";
                         this.qLNhaSachDataSet.Sach.Clear();
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, connection);

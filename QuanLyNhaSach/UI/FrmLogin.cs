@@ -15,6 +15,7 @@ namespace QuanLyNhaSach
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
         public static String MaNV = "";
+        public static bool login = false;
         public FrmLogin()
         {
             InitializeComponent();
@@ -22,19 +23,19 @@ namespace QuanLyNhaSach
 
         private void pictureBoxShow_Click(object sender, EventArgs e)
         {
-            if (txtPass.PasswordChar == '*')
+            if (txtPass.UseSystemPasswordChar == true)
             {
                 pictureBoxHide.BringToFront();
-                txtPass.PasswordChar = '\0';
+                txtPass.UseSystemPasswordChar = false;
             }
         }
 
         private void pictureBoxHide_Click(object sender, EventArgs e)
         {
-            if(txtPass.PasswordChar != '*')
+            if(txtPass.UseSystemPasswordChar == false)
             {
                 pictureBoxShow.BringToFront();
-                txtPass.PasswordChar = '*';
+                txtPass.UseSystemPasswordChar = true;
             }    
                 
         }
@@ -67,6 +68,7 @@ namespace QuanLyNhaSach
                         txtUser.Text = "";
                         txtPass.Text = "";
                         MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        login = true;
                         this.Close();
                     }
                     else
@@ -90,6 +92,16 @@ namespace QuanLyNhaSach
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
+            
+        }
+
+        private void FormClose(object sender, FormClosingEventArgs e)
+        {
+            if(MaNV.Trim() == "")
+            {
+                Application.Exit();
+            }
             
         }
     }

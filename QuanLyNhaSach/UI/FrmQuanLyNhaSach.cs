@@ -47,6 +47,7 @@ namespace QuanLyNhaSach.UI
         private void dangXuatSignOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+            FrmLogin.login = false;
         }
 
         private void sachToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,8 +70,39 @@ namespace QuanLyNhaSach.UI
 
         private void FrmQuanLyNhaSach_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLNhaSachDataSet.Account' table. You can move, or remove it, as needed.
+            this.accountTableAdapter.Fill(this.qLNhaSachDataSet.Account);
             FrmLogin login = new FrmLogin();
+            this.Hide();
             login.ShowDialog();
+            if(FrmLogin.login == true)
+                  this.Show();
+            FrmHome home = new FrmHome();
+            addForm(home);
+
+            bool? checkAdmin = accountTableAdapter.ScalarQueryCheckAdmin(FrmLogin.MaNV);
+            if (checkAdmin == false)
+            {
+                nhanVienToolStripMenuItem.Visible = false;
+                nhapHangToolStripMenuItem.Visible = false;
+                sachToolStripMenuItem.Visible = false;
+                //nhapHangToolStripMenuItem.HideDropDown();
+                //nhanVienToolStripMenuItem.HideDropDown();
+                //sachToolStripMenuItem.HideDropDown();
+               
+            }
+        }
+
+        private void trangChuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmHome home = new FrmHome();
+            addForm(home);
+        }
+
+        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhau frm = new FrmDoiMatKhau();
+            frm.ShowDialog();
         }
     }
 }

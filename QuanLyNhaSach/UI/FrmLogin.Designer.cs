@@ -87,27 +87,27 @@
             // labelPass
             // 
             this.labelPass.AutoSize = true;
-            this.labelPass.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPass.Location = new System.Drawing.Point(148, 147);
+            this.labelPass.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.Location = new System.Drawing.Point(145, 159);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(96, 34);
+            this.labelPass.Size = new System.Drawing.Size(113, 24);
             this.labelPass.TabIndex = 4;
-            this.labelPass.Text = "Pass :";
+            this.labelPass.Text = "Mật Khẩu:";
             // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(148, 89);
+            this.labelUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(86, 101);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(97, 34);
+            this.labelUser.Size = new System.Drawing.Size(172, 24);
             this.labelUser.TabIndex = 2;
-            this.labelUser.Text = "User :";
+            this.labelUser.Text = "Tên Đăng Nhập:";
             // 
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(251, 96);
+            this.txtUser.Location = new System.Drawing.Point(285, 97);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(264, 28);
             this.txtUser.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.pictureBoxShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pictureBoxShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxShow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShow.Image")));
-            this.pictureBoxShow.Location = new System.Drawing.Point(478, 155);
+            this.pictureBoxShow.Location = new System.Drawing.Point(512, 156);
             this.pictureBoxShow.Name = "pictureBoxShow";
             this.pictureBoxShow.Size = new System.Drawing.Size(37, 27);
             this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,7 +140,7 @@
             this.pictureBoxHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pictureBoxHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxHide.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHide.Image")));
-            this.pictureBoxHide.Location = new System.Drawing.Point(478, 155);
+            this.pictureBoxHide.Location = new System.Drawing.Point(512, 156);
             this.pictureBoxHide.Name = "pictureBoxHide";
             this.pictureBoxHide.Size = new System.Drawing.Size(37, 27);
             this.pictureBoxHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -151,11 +151,11 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(251, 154);
+            this.txtPass.Location = new System.Drawing.Point(285, 155);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(264, 28);
             this.txtPass.TabIndex = 3;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // FrmLogin
             // 
@@ -169,6 +169,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClose);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();

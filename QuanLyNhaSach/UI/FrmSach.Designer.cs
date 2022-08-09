@@ -34,14 +34,20 @@
             this.tableLayoutPanelSP = new System.Windows.Forms.TableLayoutPanel();
             this.lblChonNhaXuatBan = new System.Windows.Forms.Label();
             this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.sachBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLNhaSachDataSet = new QuanLyNhaSach.QLNhaSachDataSet();
             this.lblMaSach = new System.Windows.Forms.Label();
             this.lblTenSach = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.lblTacGia = new System.Windows.Forms.Label();
             this.cmbTacGia = new System.Windows.Forms.ComboBox();
+            this.tacGiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblMaTL = new System.Windows.Forms.Label();
             this.cmbMaTL = new System.Windows.Forms.ComboBox();
+            this.theLoaiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.theLoaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbNhaXuatBan = new System.Windows.Forms.ComboBox();
+            this.nhaXuatBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nudNamXB = new System.Windows.Forms.NumericUpDown();
             this.lblNamXB = new System.Windows.Forms.Label();
             this.txtTrongLuong = new System.Windows.Forms.TextBox();
@@ -55,12 +61,16 @@
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.lblMoTa = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.btnThemNhaCungCap = new System.Windows.Forms.Button();
-            this.btnThemNhaSanXuat = new System.Windows.Forms.Button();
-            this.btnThemLoaiSach = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThemNhaXuatBan = new System.Windows.Forms.Button();
+            this.btnThemTacGia = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThemSach = new System.Windows.Forms.Button();
+            this.pnlCapNhat = new System.Windows.Forms.Panel();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnHuyCapNhat = new System.Windows.Forms.Button();
+            this.btnLuuChinhSua = new System.Windows.Forms.Button();
+            this.nudGiaBan = new System.Windows.Forms.NumericUpDown();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.dataGridViewFind = new System.Windows.Forms.DataGridView();
             this.maSachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +85,6 @@
             this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sachBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLNhaSachDataSet = new QuanLyNhaSach.QLNhaSachDataSet();
             this.groupBoxFind = new System.Windows.Forms.GroupBox();
             this.rdbtnTimTheoLoai = new System.Windows.Forms.RadioButton();
             this.rdbtnTimTheoMa = new System.Windows.Forms.RadioButton();
@@ -85,33 +93,29 @@
             this.rdbtnTimTheoTen = new System.Windows.Forms.RadioButton();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.sachTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.SachTableAdapter();
-            this.tacGiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tacGiaTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.TacGiaTableAdapter();
-            this.tacGiaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.nhaXuatBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhaXuatBanTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.NhaXuatBanTableAdapter();
-            this.nhaXuatBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.theLoaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.theLoaiTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.TheLoaiTableAdapter();
-            this.theLoaiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.tableLayoutPanelSP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNamXB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTrang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
+            this.pnlCapNhat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaBan)).BeginInit();
             this.pnlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).BeginInit();
             this.groupBoxFind.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCenter
@@ -119,10 +123,10 @@
             this.pnlCenter.AutoScroll = true;
             this.pnlCenter.AutoSize = true;
             this.pnlCenter.Controls.Add(this.groupControl1);
-            this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCenter.Location = new System.Drawing.Point(0, 43);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1223, 311);
+            this.pnlCenter.Size = new System.Drawing.Size(1223, 247);
             this.pnlCenter.TabIndex = 5;
             // 
             // groupControl1
@@ -170,12 +174,14 @@
             this.tableLayoutPanelSP.Controls.Add(this.nudSoLuong, 5, 0);
             this.tableLayoutPanelSP.Controls.Add(this.lblMoTa, 4, 1);
             this.tableLayoutPanelSP.Controls.Add(this.txtMoTa, 5, 1);
-            this.tableLayoutPanelSP.Controls.Add(this.txtGiaBan, 3, 4);
             this.tableLayoutPanelSP.Controls.Add(this.btnThemNhaCungCap, 6, 0);
-            this.tableLayoutPanelSP.Controls.Add(this.btnThemNhaSanXuat, 6, 1);
-            this.tableLayoutPanelSP.Controls.Add(this.btnThemLoaiSach, 6, 2);
-            this.tableLayoutPanelSP.Controls.Add(this.btnCapNhat, 6, 3);
+            this.tableLayoutPanelSP.Controls.Add(this.btnThemNhaXuatBan, 6, 1);
+            this.tableLayoutPanelSP.Controls.Add(this.btnThemTacGia, 6, 2);
             this.tableLayoutPanelSP.Controls.Add(this.btnLuu, 6, 4);
+            this.tableLayoutPanelSP.Controls.Add(this.btnThemSach, 4, 4);
+            this.tableLayoutPanelSP.Controls.Add(this.pnlCapNhat, 6, 3);
+            this.tableLayoutPanelSP.Controls.Add(this.btnLuuChinhSua, 4, 3);
+            this.tableLayoutPanelSP.Controls.Add(this.nudGiaBan, 3, 4);
             this.tableLayoutPanelSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSP.Location = new System.Drawing.Point(2, 28);
             this.tableLayoutPanelSP.Name = "tableLayoutPanelSP";
@@ -202,10 +208,23 @@
             // txtMaSach
             // 
             this.txtMaSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaSach.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sachBindingSource, "MaSach", true));
             this.txtMaSach.Location = new System.Drawing.Point(203, 7);
             this.txtMaSach.Name = "txtMaSach";
             this.txtMaSach.Size = new System.Drawing.Size(179, 23);
             this.txtMaSach.TabIndex = 4;
+            this.txtMaSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMaSach.TextChanged += new System.EventHandler(this.CheckMaSach_TextChanged);
+            // 
+            // sachBindingSource
+            // 
+            this.sachBindingSource.DataMember = "Sach";
+            this.sachBindingSource.DataSource = this.qLNhaSachDataSet;
+            // 
+            // qLNhaSachDataSet
+            // 
+            this.qLNhaSachDataSet.DataSetName = "QLNhaSachDataSet";
+            this.qLNhaSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblMaSach
             // 
@@ -216,7 +235,7 @@
             this.lblMaSach.Name = "lblMaSach";
             this.lblMaSach.Size = new System.Drawing.Size(194, 21);
             this.lblMaSach.TabIndex = 3;
-            this.lblMaSach.Text = "MaSach:";
+            this.lblMaSach.Text = "Mã Sách:";
             // 
             // lblTenSach
             // 
@@ -227,15 +246,17 @@
             this.lblTenSach.Name = "lblTenSach";
             this.lblTenSach.Size = new System.Drawing.Size(194, 21);
             this.lblTenSach.TabIndex = 5;
-            this.lblTenSach.Text = "TenSach:";
+            this.lblTenSach.Text = "Tên Sách:";
             // 
             // txtTenSach
             // 
             this.txtTenSach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenSach.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sachBindingSource, "TenSach", true));
             this.txtTenSach.Location = new System.Drawing.Point(203, 44);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(179, 23);
             this.txtTenSach.TabIndex = 6;
+            this.txtTenSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTacGia
             // 
@@ -252,7 +273,6 @@
             // 
             this.cmbTacGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTacGia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbTacGia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tacGiaBindingSource1, "MaTG", true));
             this.cmbTacGia.DataSource = this.tacGiaBindingSource;
             this.cmbTacGia.DisplayMember = "TenTG";
             this.cmbTacGia.FormattingEnabled = true;
@@ -261,6 +281,11 @@
             this.cmbTacGia.Size = new System.Drawing.Size(179, 24);
             this.cmbTacGia.TabIndex = 8;
             this.cmbTacGia.ValueMember = "MaTG";
+            // 
+            // tacGiaBindingSource
+            // 
+            this.tacGiaBindingSource.DataMember = "TacGia";
+            this.tacGiaBindingSource.DataSource = this.qLNhaSachDataSet;
             // 
             // lblMaTL
             // 
@@ -271,7 +296,7 @@
             this.lblMaTL.Name = "lblMaTL";
             this.lblMaTL.Size = new System.Drawing.Size(194, 21);
             this.lblMaTL.TabIndex = 5;
-            this.lblMaTL.Text = "MaTL:";
+            this.lblMaTL.Text = "Thể Loại:";
             // 
             // cmbMaTL
             // 
@@ -287,11 +312,20 @@
             this.cmbMaTL.TabIndex = 8;
             this.cmbMaTL.ValueMember = "MaTL";
             // 
+            // theLoaiBindingSource1
+            // 
+            this.theLoaiBindingSource1.DataMember = "TheLoai";
+            this.theLoaiBindingSource1.DataSource = this.qLNhaSachDataSet;
+            // 
+            // theLoaiBindingSource
+            // 
+            this.theLoaiBindingSource.DataMember = "TheLoai";
+            this.theLoaiBindingSource.DataSource = this.qLNhaSachDataSet;
+            // 
             // cmbNhaXuatBan
             // 
             this.cmbNhaXuatBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbNhaXuatBan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbNhaXuatBan.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nhaXuatBanBindingSource1, "MaNXB", true));
             this.cmbNhaXuatBan.DataSource = this.nhaXuatBanBindingSource;
             this.cmbNhaXuatBan.DisplayMember = "TenNXB";
             this.cmbNhaXuatBan.FormattingEnabled = true;
@@ -301,10 +335,16 @@
             this.cmbNhaXuatBan.TabIndex = 10;
             this.cmbNhaXuatBan.ValueMember = "MaNXB";
             // 
+            // nhaXuatBanBindingSource
+            // 
+            this.nhaXuatBanBindingSource.DataMember = "NhaXuatBan";
+            this.nhaXuatBanBindingSource.DataSource = this.qLNhaSachDataSet;
+            // 
             // nudNamXB
             // 
             this.nudNamXB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nudNamXB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nudNamXB.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sachBindingSource, "NamXB", true));
             this.nudNamXB.Location = new System.Drawing.Point(576, 7);
             this.nudNamXB.Maximum = new decimal(new int[] {
             2023,
@@ -335,15 +375,18 @@
             this.lblNamXB.Name = "lblNamXB";
             this.lblNamXB.Size = new System.Drawing.Size(182, 21);
             this.lblNamXB.TabIndex = 11;
-            this.lblNamXB.Text = "NamXB:";
+            this.lblNamXB.Text = "Năm Xuất Bản:";
             // 
             // txtTrongLuong
             // 
             this.txtTrongLuong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTrongLuong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sachBindingSource, "TrongLuong", true));
             this.txtTrongLuong.Location = new System.Drawing.Point(576, 44);
             this.txtTrongLuong.Name = "txtTrongLuong";
             this.txtTrongLuong.Size = new System.Drawing.Size(182, 23);
             this.txtTrongLuong.TabIndex = 14;
+            this.txtTrongLuong.Text = "100";
+            this.txtTrongLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTrongLuong
             // 
@@ -359,10 +402,13 @@
             // txtKichThuocBaoBi
             // 
             this.txtKichThuocBaoBi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKichThuocBaoBi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sachBindingSource, "KichThuocBaoBi", true));
             this.txtKichThuocBaoBi.Location = new System.Drawing.Point(576, 81);
             this.txtKichThuocBaoBi.Name = "txtKichThuocBaoBi";
             this.txtKichThuocBaoBi.Size = new System.Drawing.Size(182, 23);
             this.txtKichThuocBaoBi.TabIndex = 16;
+            this.txtKichThuocBaoBi.Text = "  ";
+            this.txtKichThuocBaoBi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblKichThuocBaoBi
             // 
@@ -390,6 +436,7 @@
             // 
             this.nudSoTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSoTrang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nudSoTrang.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sachBindingSource, "SoTrang", true));
             this.nudSoTrang.Location = new System.Drawing.Point(576, 118);
             this.nudSoTrang.Maximum = new decimal(new int[] {
             1000,
@@ -437,6 +484,7 @@
             // 
             this.nudSoLuong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSoLuong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nudSoLuong.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.sachBindingSource, "SoLuong", true));
             this.nudSoLuong.Enabled = false;
             this.nudSoLuong.Location = new System.Drawing.Point(906, 7);
             this.nudSoLuong.Maximum = new decimal(new int[] {
@@ -464,18 +512,14 @@
             // txtMoTa
             // 
             this.txtMoTa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sachBindingSource, "MoTa", true));
             this.txtMoTa.Location = new System.Drawing.Point(906, 44);
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(112, 23);
             this.txtMoTa.TabIndex = 24;
-            // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGiaBan.Location = new System.Drawing.Point(576, 157);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(182, 23);
-            this.txtGiaBan.TabIndex = 20;
+            this.txtMoTa.Tag = " ";
+            this.txtMoTa.Text = " ";
+            this.txtMoTa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnThemNhaCungCap
             // 
@@ -487,39 +531,31 @@
             this.btnThemNhaCungCap.TabIndex = 0;
             this.btnThemNhaCungCap.Text = "Thêm Nhà Cung Cấp";
             this.btnThemNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnThemNhaCungCap.Click += new System.EventHandler(this.btnThemNhaCungCap_Click);
             // 
-            // btnThemNhaSanXuat
+            // btnThemNhaXuatBan
             // 
-            this.btnThemNhaSanXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemNhaSanXuat.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNhaSanXuat.Location = new System.Drawing.Point(1024, 40);
-            this.btnThemNhaSanXuat.Name = "btnThemNhaSanXuat";
-            this.btnThemNhaSanXuat.Size = new System.Drawing.Size(163, 30);
-            this.btnThemNhaSanXuat.TabIndex = 0;
-            this.btnThemNhaSanXuat.Text = "Thêm Nhà Sản Xuất";
-            this.btnThemNhaSanXuat.UseVisualStyleBackColor = true;
+            this.btnThemNhaXuatBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemNhaXuatBan.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNhaXuatBan.Location = new System.Drawing.Point(1024, 40);
+            this.btnThemNhaXuatBan.Name = "btnThemNhaXuatBan";
+            this.btnThemNhaXuatBan.Size = new System.Drawing.Size(163, 30);
+            this.btnThemNhaXuatBan.TabIndex = 0;
+            this.btnThemNhaXuatBan.Text = "Thêm Nhà xuất Bản";
+            this.btnThemNhaXuatBan.UseVisualStyleBackColor = true;
+            this.btnThemNhaXuatBan.Click += new System.EventHandler(this.btnThemNhaXuatBan_Click);
             // 
-            // btnThemLoaiSach
+            // btnThemTacGia
             // 
-            this.btnThemLoaiSach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemLoaiSach.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemLoaiSach.Location = new System.Drawing.Point(1024, 77);
-            this.btnThemLoaiSach.Name = "btnThemLoaiSach";
-            this.btnThemLoaiSach.Size = new System.Drawing.Size(163, 30);
-            this.btnThemLoaiSach.TabIndex = 0;
-            this.btnThemLoaiSach.Text = "Thêm Loại Sách";
-            this.btnThemLoaiSach.UseVisualStyleBackColor = true;
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCapNhat.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(1024, 114);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(163, 30);
-            this.btnCapNhat.TabIndex = 0;
-            this.btnCapNhat.Text = "Cập Nhật Sách";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnThemTacGia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemTacGia.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemTacGia.Location = new System.Drawing.Point(1024, 77);
+            this.btnThemTacGia.Name = "btnThemTacGia";
+            this.btnThemTacGia.Size = new System.Drawing.Size(163, 30);
+            this.btnThemTacGia.TabIndex = 0;
+            this.btnThemTacGia.Text = "Thêm Tác Giả";
+            this.btnThemTacGia.UseVisualStyleBackColor = true;
+            this.btnThemTacGia.Click += new System.EventHandler(this.btnThemTacGia_Click);
             // 
             // btnLuu
             // 
@@ -532,23 +568,117 @@
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThemSach
+            // 
+            this.btnThemSach.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThemSach.BackColor = System.Drawing.Color.Wheat;
+            this.btnThemSach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemSach.Enabled = false;
+            this.btnThemSach.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSach.Location = new System.Drawing.Point(764, 153);
+            this.btnThemSach.Name = "btnThemSach";
+            this.btnThemSach.Size = new System.Drawing.Size(136, 30);
+            this.btnThemSach.TabIndex = 0;
+            this.btnThemSach.Text = "Thêm Sách";
+            this.btnThemSach.UseVisualStyleBackColor = false;
+            this.btnThemSach.Click += new System.EventHandler(this.ThemSach_Click);
+            // 
+            // pnlCapNhat
+            // 
+            this.pnlCapNhat.Controls.Add(this.btnCapNhat);
+            this.pnlCapNhat.Controls.Add(this.btnHuyCapNhat);
+            this.pnlCapNhat.Location = new System.Drawing.Point(1024, 114);
+            this.pnlCapNhat.Name = "pnlCapNhat";
+            this.pnlCapNhat.Size = new System.Drawing.Size(167, 31);
+            this.pnlCapNhat.TabIndex = 0;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.Color.Silver;
+            this.btnCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCapNhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCapNhat.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(0, 0);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(167, 31);
+            this.btnCapNhat.TabIndex = 0;
+            this.btnCapNhat.Text = "Cập Nhật Sách";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnHuyCapNhat
+            // 
+            this.btnHuyCapNhat.BackColor = System.Drawing.Color.Tomato;
+            this.btnHuyCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHuyCapNhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHuyCapNhat.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyCapNhat.Location = new System.Drawing.Point(0, 0);
+            this.btnHuyCapNhat.Name = "btnHuyCapNhat";
+            this.btnHuyCapNhat.Size = new System.Drawing.Size(167, 31);
+            this.btnHuyCapNhat.TabIndex = 0;
+            this.btnHuyCapNhat.Text = "Hủy Cập Nhật ";
+            this.btnHuyCapNhat.UseVisualStyleBackColor = false;
+            this.btnHuyCapNhat.Click += new System.EventHandler(this.btnHuyCapNhat_Click);
+            // 
+            // btnLuuChinhSua
+            // 
+            this.btnLuuChinhSua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLuuChinhSua.BackColor = System.Drawing.Color.LightCyan;
+            this.btnLuuChinhSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuuChinhSua.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuChinhSua.Location = new System.Drawing.Point(764, 114);
+            this.btnLuuChinhSua.Name = "btnLuuChinhSua";
+            this.btnLuuChinhSua.Size = new System.Drawing.Size(136, 30);
+            this.btnLuuChinhSua.TabIndex = 0;
+            this.btnLuuChinhSua.Text = "Lưu Chỉnh Sửa";
+            this.btnLuuChinhSua.UseVisualStyleBackColor = false;
+            this.btnLuuChinhSua.Click += new System.EventHandler(this.LuuChinhSua_Click);
+            // 
+            // nudGiaBan
+            // 
+            this.nudGiaBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudGiaBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nudGiaBan.Location = new System.Drawing.Point(576, 157);
+            this.nudGiaBan.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudGiaBan.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudGiaBan.Name = "nudGiaBan";
+            this.nudGiaBan.Size = new System.Drawing.Size(182, 23);
+            this.nudGiaBan.TabIndex = 12;
+            this.nudGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudGiaBan.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             // 
             // pnlBottom
             // 
             this.pnlBottom.Controls.Add(this.dataGridViewFind);
             this.pnlBottom.Controls.Add(this.groupBoxFind);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 354);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 375);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1223, 355);
+            this.pnlBottom.Size = new System.Drawing.Size(1223, 334);
             this.pnlBottom.TabIndex = 4;
             // 
             // dataGridViewFind
             // 
+            this.dataGridViewFind.AllowUserToOrderColumns = true;
             this.dataGridViewFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewFind.AutoGenerateColumns = false;
             this.dataGridViewFind.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewFind.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFind.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSachDataGridViewTextBoxColumn,
@@ -565,12 +695,16 @@
             this.moTaDataGridViewTextBoxColumn});
             this.dataGridViewFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewFind.DataSource = this.sachBindingSource;
-            this.dataGridViewFind.Location = new System.Drawing.Point(13, 93);
+            this.dataGridViewFind.GridColor = System.Drawing.Color.DarkGray;
+            this.dataGridViewFind.Location = new System.Drawing.Point(15, 76);
             this.dataGridViewFind.Name = "dataGridViewFind";
+            this.dataGridViewFind.ReadOnly = true;
             this.dataGridViewFind.RowHeadersWidth = 51;
             this.dataGridViewFind.RowTemplate.Height = 24;
-            this.dataGridViewFind.Size = new System.Drawing.Size(1194, 246);
+            this.dataGridViewFind.Size = new System.Drawing.Size(1200, 246);
             this.dataGridViewFind.TabIndex = 8;
+            this.dataGridViewFind.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellClick_dataGridViewFind);
+            this.dataGridViewFind.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.UpdateValueSach);
             // 
             // maSachDataGridViewTextBoxColumn
             // 
@@ -578,6 +712,7 @@
             this.maSachDataGridViewTextBoxColumn.HeaderText = "MaSach";
             this.maSachDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maSachDataGridViewTextBoxColumn.Name = "maSachDataGridViewTextBoxColumn";
+            this.maSachDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenSachDataGridViewTextBoxColumn
             // 
@@ -585,6 +720,7 @@
             this.tenSachDataGridViewTextBoxColumn.HeaderText = "TenSach";
             this.tenSachDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenSachDataGridViewTextBoxColumn.Name = "tenSachDataGridViewTextBoxColumn";
+            this.tenSachDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maTLDataGridViewTextBoxColumn
             // 
@@ -592,6 +728,7 @@
             this.maTLDataGridViewTextBoxColumn.HeaderText = "MaTL";
             this.maTLDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maTLDataGridViewTextBoxColumn.Name = "maTLDataGridViewTextBoxColumn";
+            this.maTLDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maTGDataGridViewTextBoxColumn
             // 
@@ -599,6 +736,7 @@
             this.maTGDataGridViewTextBoxColumn.HeaderText = "MaTG";
             this.maTGDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maTGDataGridViewTextBoxColumn.Name = "maTGDataGridViewTextBoxColumn";
+            this.maTGDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maNXBDataGridViewTextBoxColumn
             // 
@@ -606,6 +744,7 @@
             this.maNXBDataGridViewTextBoxColumn.HeaderText = "MaNXB";
             this.maNXBDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNXBDataGridViewTextBoxColumn.Name = "maNXBDataGridViewTextBoxColumn";
+            this.maNXBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // namXBDataGridViewTextBoxColumn
             // 
@@ -613,6 +752,7 @@
             this.namXBDataGridViewTextBoxColumn.HeaderText = "NamXB";
             this.namXBDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.namXBDataGridViewTextBoxColumn.Name = "namXBDataGridViewTextBoxColumn";
+            this.namXBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // trongLuongDataGridViewTextBoxColumn
             // 
@@ -620,6 +760,7 @@
             this.trongLuongDataGridViewTextBoxColumn.HeaderText = "TrongLuong";
             this.trongLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
+            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kichThuocBaoBiDataGridViewTextBoxColumn
             // 
@@ -627,6 +768,7 @@
             this.kichThuocBaoBiDataGridViewTextBoxColumn.HeaderText = "KichThuocBaoBi";
             this.kichThuocBaoBiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.kichThuocBaoBiDataGridViewTextBoxColumn.Name = "kichThuocBaoBiDataGridViewTextBoxColumn";
+            this.kichThuocBaoBiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soTrangDataGridViewTextBoxColumn
             // 
@@ -634,6 +776,7 @@
             this.soTrangDataGridViewTextBoxColumn.HeaderText = "SoTrang";
             this.soTrangDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soTrangDataGridViewTextBoxColumn.Name = "soTrangDataGridViewTextBoxColumn";
+            this.soTrangDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // giaBanDataGridViewTextBoxColumn
             // 
@@ -641,6 +784,7 @@
             this.giaBanDataGridViewTextBoxColumn.HeaderText = "GiaBan";
             this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
+            this.giaBanDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soLuongDataGridViewTextBoxColumn
             // 
@@ -648,6 +792,7 @@
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
             this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // moTaDataGridViewTextBoxColumn
             // 
@@ -655,16 +800,7 @@
             this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
             this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
-            // 
-            // sachBindingSource
-            // 
-            this.sachBindingSource.DataMember = "Sach";
-            this.sachBindingSource.DataSource = this.qLNhaSachDataSet;
-            // 
-            // qLNhaSachDataSet
-            // 
-            this.qLNhaSachDataSet.DataSetName = "QLNhaSachDataSet";
-            this.qLNhaSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // groupBoxFind
             // 
@@ -731,6 +867,7 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(308, 28);
             this.txtFind.TabIndex = 2;
+            this.txtFind.TextChanged += new System.EventHandler(this.FindBooks);
             // 
             // rdbtnTimTheoTen
             // 
@@ -759,47 +896,30 @@
             // 
             this.sachTableAdapter.ClearBeforeFill = true;
             // 
-            // tacGiaBindingSource
-            // 
-            this.tacGiaBindingSource.DataMember = "TacGia";
-            this.tacGiaBindingSource.DataSource = this.qLNhaSachDataSet;
-            // 
             // tacGiaTableAdapter
             // 
             this.tacGiaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tacGiaBindingSource1
-            // 
-            this.tacGiaBindingSource1.DataMember = "TacGia";
-            this.tacGiaBindingSource1.DataSource = this.qLNhaSachDataSet;
-            // 
-            // nhaXuatBanBindingSource
-            // 
-            this.nhaXuatBanBindingSource.DataMember = "NhaXuatBan";
-            this.nhaXuatBanBindingSource.DataSource = this.qLNhaSachDataSet;
             // 
             // nhaXuatBanTableAdapter
             // 
             this.nhaXuatBanTableAdapter.ClearBeforeFill = true;
             // 
-            // nhaXuatBanBindingSource1
-            // 
-            this.nhaXuatBanBindingSource1.DataMember = "NhaXuatBan";
-            this.nhaXuatBanBindingSource1.DataSource = this.qLNhaSachDataSet;
-            // 
-            // theLoaiBindingSource
-            // 
-            this.theLoaiBindingSource.DataMember = "TheLoai";
-            this.theLoaiBindingSource.DataSource = this.qLNhaSachDataSet;
-            // 
             // theLoaiTableAdapter
             // 
             this.theLoaiTableAdapter.ClearBeforeFill = true;
             // 
-            // theLoaiBindingSource1
+            // pnlContent
             // 
-            this.theLoaiBindingSource1.DataMember = "TheLoai";
-            this.theLoaiBindingSource1.DataSource = this.qLNhaSachDataSet;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 290);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1223, 85);
+            this.pnlContent.TabIndex = 6;
+            // 
+            // toolTipText
+            // 
+            this.toolTipText.AutomaticDelay = 1000;
+            this.toolTipText.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // FrmSach
             // 
@@ -810,6 +930,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1223, 709);
+            this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
@@ -823,21 +944,21 @@
             this.groupControl1.ResumeLayout(false);
             this.tableLayoutPanelSP.ResumeLayout(false);
             this.tableLayoutPanelSP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNamXB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTrang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
+            this.pnlCapNhat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudGiaBan)).EndInit();
             this.pnlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).EndInit();
             this.groupBoxFind.ResumeLayout(false);
             this.groupBoxFind.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhaXuatBanBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -846,8 +967,8 @@
         #endregion
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSP;
-        private System.Windows.Forms.Button btnThemNhaSanXuat;
-        private System.Windows.Forms.Button btnThemLoaiSach;
+        private System.Windows.Forms.Button btnThemNhaXuatBan;
+        private System.Windows.Forms.Button btnThemTacGia;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThemNhaCungCap;
         private System.Windows.Forms.Panel pnlBottom;
@@ -877,7 +998,6 @@
         private System.Windows.Forms.Label lblSoTrang;
         private System.Windows.Forms.NumericUpDown nudSoTrang;
         private System.Windows.Forms.Label lblGiaBan;
-        private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.Label lblSoLuong;
         private System.Windows.Forms.NumericUpDown nudSoLuong;
         private System.Windows.Forms.Label lblMoTa;
@@ -887,6 +1007,18 @@
         private QLNhaSachDataSet qLNhaSachDataSet;
         private System.Windows.Forms.BindingSource sachBindingSource;
         private QLNhaSachDataSetTableAdapters.SachTableAdapter sachTableAdapter;
+        private System.Windows.Forms.BindingSource tacGiaBindingSource;
+        private QLNhaSachDataSetTableAdapters.TacGiaTableAdapter tacGiaTableAdapter;
+        private System.Windows.Forms.BindingSource nhaXuatBanBindingSource;
+        private QLNhaSachDataSetTableAdapters.NhaXuatBanTableAdapter nhaXuatBanTableAdapter;
+        private System.Windows.Forms.BindingSource theLoaiBindingSource;
+        private QLNhaSachDataSetTableAdapters.TheLoaiTableAdapter theLoaiTableAdapter;
+        private System.Windows.Forms.BindingSource theLoaiBindingSource1;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Button btnThemSach;
+        private System.Windows.Forms.Panel pnlCapNhat;
+        private System.Windows.Forms.Button btnHuyCapNhat;
+        private System.Windows.Forms.Button btnLuuChinhSua;
         private System.Windows.Forms.DataGridView dataGridViewFind;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSachDataGridViewTextBoxColumn;
@@ -900,14 +1032,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tacGiaBindingSource;
-        private QLNhaSachDataSetTableAdapters.TacGiaTableAdapter tacGiaTableAdapter;
-        private System.Windows.Forms.BindingSource tacGiaBindingSource1;
-        private System.Windows.Forms.BindingSource nhaXuatBanBindingSource;
-        private QLNhaSachDataSetTableAdapters.NhaXuatBanTableAdapter nhaXuatBanTableAdapter;
-        private System.Windows.Forms.BindingSource nhaXuatBanBindingSource1;
-        private System.Windows.Forms.BindingSource theLoaiBindingSource;
-        private QLNhaSachDataSetTableAdapters.TheLoaiTableAdapter theLoaiTableAdapter;
-        private System.Windows.Forms.BindingSource theLoaiBindingSource1;
+        private System.Windows.Forms.ToolTip toolTipText;
+        private System.Windows.Forms.NumericUpDown nudGiaBan;
     }
 }

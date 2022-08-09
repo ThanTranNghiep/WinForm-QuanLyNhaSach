@@ -17,5 +17,12 @@ namespace QuanLyNhaSach.UI
         {
             InitializeComponent();
         }
+
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLNhaSachDataSet.Sach' table. You can move, or remove it, as needed.
+            this.sachTableAdapter.Fill(this.qLNhaSachDataSet.Sach);
+
+        }
     }
 }

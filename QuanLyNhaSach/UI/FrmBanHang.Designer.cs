@@ -30,10 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTop = new DevExpress.XtraEditors.PanelControl();
+            this.cmbNhanVien = new System.Windows.Forms.ComboBox();
+            this.nhanVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.qLNhaSachDataSet = new QuanLyNhaSach.QLNhaSachDataSet();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimeONgayBan = new DevExpress.XtraEditors.DateTimeOffsetEdit();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.lblNgay = new System.Windows.Forms.Label();
-            this.lblMaNV = new System.Windows.Forms.Label();
+            this.lblNhanVien = new System.Windows.Forms.Label();
             this.txtMaHDB = new System.Windows.Forms.TextBox();
             this.lblMaHDB = new System.Windows.Forms.Label();
             this.btnXoaTatCa = new System.Windows.Forms.Button();
@@ -79,11 +82,14 @@
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sachBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLNhaSachDataSet = new QuanLyNhaSach.QLNhaSachDataSet();
             this.sachTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.SachTableAdapter();
             this.sachBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanVienTableAdapter = new QuanLyNhaSach.QLNhaSachDataSetTableAdapters.NhanVienTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTop)).BeginInit();
             this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeONgayBan.Properties)).BeginInit();
             this.pnlCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinNhapSach)).BeginInit();
@@ -94,7 +100,6 @@
             this.groupBoxFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,10 +108,10 @@
             this.pnlTop.Appearance.BackColor = System.Drawing.Color.White;
             this.pnlTop.Appearance.Options.UseBackColor = true;
             this.pnlTop.AutoSize = true;
+            this.pnlTop.Controls.Add(this.cmbNhanVien);
             this.pnlTop.Controls.Add(this.dateTimeONgayBan);
-            this.pnlTop.Controls.Add(this.txtMaNV);
             this.pnlTop.Controls.Add(this.lblNgay);
-            this.pnlTop.Controls.Add(this.lblMaNV);
+            this.pnlTop.Controls.Add(this.lblNhanVien);
             this.pnlTop.Controls.Add(this.txtMaHDB);
             this.pnlTop.Controls.Add(this.lblMaHDB);
             this.pnlTop.Controls.Add(this.btnXoaTatCa);
@@ -117,11 +122,38 @@
             this.pnlTop.Size = new System.Drawing.Size(1225, 63);
             this.pnlTop.TabIndex = 0;
             // 
+            // cmbNhanVien
+            // 
+            this.cmbNhanVien.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nhanVienBindingSource1, "MaNV", true));
+            this.cmbNhanVien.DataSource = this.nhanVienBindingSource;
+            this.cmbNhanVien.DisplayMember = "HoTen";
+            this.cmbNhanVien.FormattingEnabled = true;
+            this.cmbNhanVien.Location = new System.Drawing.Point(481, 22);
+            this.cmbNhanVien.Name = "cmbNhanVien";
+            this.cmbNhanVien.Size = new System.Drawing.Size(158, 24);
+            this.cmbNhanVien.TabIndex = 7;
+            this.cmbNhanVien.ValueMember = "MaNV";
+            // 
+            // nhanVienBindingSource1
+            // 
+            this.nhanVienBindingSource1.DataMember = "NhanVien";
+            this.nhanVienBindingSource1.DataSource = this.qLNhaSachDataSet;
+            // 
+            // qLNhaSachDataSet
+            // 
+            this.qLNhaSachDataSet.DataSetName = "QLNhaSachDataSet";
+            this.qLNhaSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.qLNhaSachDataSet;
+            // 
             // dateTimeONgayBan
             // 
             this.dateTimeONgayBan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimeONgayBan.EditValue = null;
-            this.dateTimeONgayBan.Location = new System.Drawing.Point(729, 15);
+            this.dateTimeONgayBan.Location = new System.Drawing.Point(729, 21);
             this.dateTimeONgayBan.Name = "dateTimeONgayBan";
             this.dateTimeONgayBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeONgayBan.Properties.Appearance.Options.UseFont = true;
@@ -130,15 +162,6 @@
             this.dateTimeONgayBan.Properties.MaskSettings.Set("mask", "d");
             this.dateTimeONgayBan.Size = new System.Drawing.Size(248, 28);
             this.dateTimeONgayBan.TabIndex = 8;
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(401, 15);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(169, 32);
-            this.txtMaNV.TabIndex = 1;
             // 
             // lblNgay
             // 
@@ -149,18 +172,18 @@
             this.lblNgay.Name = "lblNgay";
             this.lblNgay.Size = new System.Drawing.Size(62, 24);
             this.lblNgay.TabIndex = 0;
-            this.lblNgay.Text = "Ngay:";
+            this.lblNgay.Text = "Ngày:";
             // 
-            // lblMaNV
+            // lblNhanVien
             // 
-            this.lblMaNV.AutoSize = true;
-            this.lblMaNV.BackColor = System.Drawing.Color.Transparent;
-            this.lblMaNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaNV.Location = new System.Drawing.Point(327, 21);
-            this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(68, 24);
-            this.lblMaNV.TabIndex = 0;
-            this.lblMaNV.Text = "MaNV:";
+            this.lblNhanVien.AutoSize = true;
+            this.lblNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.lblNhanVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhanVien.Location = new System.Drawing.Point(327, 21);
+            this.lblNhanVien.Name = "lblNhanVien";
+            this.lblNhanVien.Size = new System.Drawing.Size(148, 24);
+            this.lblNhanVien.TabIndex = 0;
+            this.lblNhanVien.Text = "Nhân Viên Bán:";
             // 
             // txtMaHDB
             // 
@@ -556,6 +579,7 @@
             this.dataGridViewFind.DataSource = this.sachBindingSource;
             this.dataGridViewFind.Location = new System.Drawing.Point(12, 99);
             this.dataGridViewFind.Name = "dataGridViewFind";
+            this.dataGridViewFind.ReadOnly = true;
             this.dataGridViewFind.RowHeadersWidth = 51;
             this.dataGridViewFind.RowTemplate.Height = 24;
             this.dataGridViewFind.Size = new System.Drawing.Size(1200, 246);
@@ -567,6 +591,7 @@
             this.maSachDataGridViewTextBoxColumn.HeaderText = "MaSach";
             this.maSachDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maSachDataGridViewTextBoxColumn.Name = "maSachDataGridViewTextBoxColumn";
+            this.maSachDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenSachDataGridViewTextBoxColumn
             // 
@@ -574,6 +599,7 @@
             this.tenSachDataGridViewTextBoxColumn.HeaderText = "TenSach";
             this.tenSachDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenSachDataGridViewTextBoxColumn.Name = "tenSachDataGridViewTextBoxColumn";
+            this.tenSachDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maTLDataGridViewTextBoxColumn
             // 
@@ -581,6 +607,7 @@
             this.maTLDataGridViewTextBoxColumn.HeaderText = "MaTL";
             this.maTLDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maTLDataGridViewTextBoxColumn.Name = "maTLDataGridViewTextBoxColumn";
+            this.maTLDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maTGDataGridViewTextBoxColumn
             // 
@@ -588,6 +615,7 @@
             this.maTGDataGridViewTextBoxColumn.HeaderText = "MaTG";
             this.maTGDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maTGDataGridViewTextBoxColumn.Name = "maTGDataGridViewTextBoxColumn";
+            this.maTGDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // maNXBDataGridViewTextBoxColumn
             // 
@@ -595,6 +623,7 @@
             this.maNXBDataGridViewTextBoxColumn.HeaderText = "MaNXB";
             this.maNXBDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNXBDataGridViewTextBoxColumn.Name = "maNXBDataGridViewTextBoxColumn";
+            this.maNXBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // namXBDataGridViewTextBoxColumn
             // 
@@ -602,6 +631,7 @@
             this.namXBDataGridViewTextBoxColumn.HeaderText = "NamXB";
             this.namXBDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.namXBDataGridViewTextBoxColumn.Name = "namXBDataGridViewTextBoxColumn";
+            this.namXBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // trongLuongDataGridViewTextBoxColumn
             // 
@@ -609,6 +639,7 @@
             this.trongLuongDataGridViewTextBoxColumn.HeaderText = "TrongLuong";
             this.trongLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
+            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kichThuocBaoBiDataGridViewTextBoxColumn
             // 
@@ -616,6 +647,7 @@
             this.kichThuocBaoBiDataGridViewTextBoxColumn.HeaderText = "KichThuocBaoBi";
             this.kichThuocBaoBiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.kichThuocBaoBiDataGridViewTextBoxColumn.Name = "kichThuocBaoBiDataGridViewTextBoxColumn";
+            this.kichThuocBaoBiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soTrangDataGridViewTextBoxColumn
             // 
@@ -623,6 +655,7 @@
             this.soTrangDataGridViewTextBoxColumn.HeaderText = "SoTrang";
             this.soTrangDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soTrangDataGridViewTextBoxColumn.Name = "soTrangDataGridViewTextBoxColumn";
+            this.soTrangDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // giaBanDataGridViewTextBoxColumn
             // 
@@ -630,6 +663,7 @@
             this.giaBanDataGridViewTextBoxColumn.HeaderText = "GiaBan";
             this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
+            this.giaBanDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soLuongDataGridViewTextBoxColumn
             // 
@@ -637,6 +671,7 @@
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
             this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // moTaDataGridViewTextBoxColumn
             // 
@@ -644,16 +679,12 @@
             this.moTaDataGridViewTextBoxColumn.HeaderText = "MoTa";
             this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sachBindingSource
             // 
             this.sachBindingSource.DataMember = "Sach";
             this.sachBindingSource.DataSource = this.qLNhaSachDataSet;
-            // 
-            // qLNhaSachDataSet
-            // 
-            this.qLNhaSachDataSet.DataSetName = "QLNhaSachDataSet";
-            this.qLNhaSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sachTableAdapter
             // 
@@ -663,6 +694,10 @@
             // 
             this.sachBindingSource1.DataMember = "Sach";
             this.sachBindingSource1.DataSource = this.qLNhaSachDataSet;
+            // 
+            // nhanVienTableAdapter
+            // 
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // FrmBanHang
             // 
@@ -679,6 +714,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlTop)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeONgayBan.Properties)).EndInit();
             this.pnlCenter.ResumeLayout(false);
             this.pnlCenter.PerformLayout();
@@ -692,7 +730,6 @@
             this.groupBoxFind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLNhaSachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -706,8 +743,7 @@
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.Label lblMaHDB;
         private System.Windows.Forms.TextBox txtMaHDB;
-        private System.Windows.Forms.Label lblMaNV;
-        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.Label lblNhanVien;
         private System.Windows.Forms.Label lblNgay;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelChucNang;
@@ -733,6 +769,19 @@
         private QLNhaSachDataSet qLNhaSachDataSet;
         private System.Windows.Forms.BindingSource sachBindingSource;
         private QLNhaSachDataSetTableAdapters.SachTableAdapter sachTableAdapter;
+        private System.Windows.Forms.GroupBox groupBoxFind;
+        private System.Windows.Forms.Button btnTatCaSach;
+        private System.Windows.Forms.TextBox txtFind;
+        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeONgayBan;
+        private DevExpress.XtraEditors.GroupControl groupControlThongTinNhapSach;
+        private System.Windows.Forms.RadioButton rdbtnTimTheoLoai;
+        private System.Windows.Forms.RadioButton rdbtnTimTheoMa;
+        private System.Windows.Forms.RadioButton rdbtnTimTheoTen;
+        private System.Windows.Forms.BindingSource sachBindingSource1;
+        private System.Windows.Forms.ComboBox cmbNhanVien;
+        private System.Windows.Forms.BindingSource nhanVienBindingSource;
+        private QLNhaSachDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
+        private System.Windows.Forms.BindingSource nhanVienBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maTLDataGridViewTextBoxColumn;
@@ -745,14 +794,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBoxFind;
-        private System.Windows.Forms.Button btnTatCaSach;
-        private System.Windows.Forms.TextBox txtFind;
-        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeONgayBan;
-        private DevExpress.XtraEditors.GroupControl groupControlThongTinNhapSach;
-        private System.Windows.Forms.RadioButton rdbtnTimTheoLoai;
-        private System.Windows.Forms.RadioButton rdbtnTimTheoMa;
-        private System.Windows.Forms.RadioButton rdbtnTimTheoTen;
-        private System.Windows.Forms.BindingSource sachBindingSource1;
     }
 }

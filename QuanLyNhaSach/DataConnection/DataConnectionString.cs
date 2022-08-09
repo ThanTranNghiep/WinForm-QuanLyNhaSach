@@ -11,10 +11,5 @@ namespace QuanLyNhaSach.DataConnection
     {
         public static string ConnectionString = @"Data Source=TRANNGHIEP;Initial Catalog=QLNhaSach;Integrated Security=True";
     
-        public static void dataSet(string connectionString)
-        {
-            DataSet ds = new DataSet();
-
-        }
     }
 }
